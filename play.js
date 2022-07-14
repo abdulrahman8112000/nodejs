@@ -1,18 +1,21 @@
-const person ={
+const person={
+    name:'arh',
+    age:22,
     greet() {
         console.log(this.name);
     }
 }
 
-const array=['a',1,true];
+const personName=({name})=>{
+    console.log(name);
 
-const copiedperson={...person};
-const copiedArray=[...array];
-
-console.log(copiedperson,copiedArray);
-
-const toArray=(...args)=>{
-    return args;
 }
 
-console.log(toArray(1,2,3,4));
+const {name,age}=person;
+personName(person);
+console.log(name,age);
+
+const hobbies=[1,2,3,4,5];
+
+const [h1,h2]=hobbies;
+console.log(h1,h2);
