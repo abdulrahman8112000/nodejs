@@ -1,6 +1,6 @@
-var name='arh';
-var age=22;
-var hobbies=true;
+let name='arh';
+let age=22;
+let hobbies=true;
 
 function userSummary(name ,age,hobby){
     return ('name: '+name+'age: '+'hobbies: '+hobby);
