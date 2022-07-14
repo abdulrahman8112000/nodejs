@@ -1,8 +1,9 @@
-const person={
-    name:'max',
-    greet() {
-        console.log(this.name);
-    }
+const hobbies=['abc',1,true];
+
+for (let hobby of hobbies){
+    console.log(hobby);
 };
 
-person.greet();
+console.log(hobbies.map((hobby)=>{
+    return "hobby: "+hobby;
+}));
