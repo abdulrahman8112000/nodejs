@@ -17,15 +17,15 @@ const server=http.createServer((req,res)=>{
             body.push(chunk);
         });
 
-        req.on('end',()=>{
+        return req.on('end',()=>{
             const parsedBody=Buffer.concat(body).toString();
             const message=parsedBody.split('=')[1];
             fs.writeFileSync('message.txt',message);
+            res.statusCode=302;
+            res.setHeader('Location','/');
+             return res.end();
         });
       
-      res.statusCode=302;
-      res.setHeader('Location','/');
-       return res.end();
     }
     res.setHeader('Content-Type','text/html');
     res.write('<html><head>My first page</head><body><h1>my first node js server</h1></body></html>');
