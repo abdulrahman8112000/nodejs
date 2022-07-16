@@ -4,12 +4,12 @@ const http=require('http');
 
 const app=express();
 
-app.use((req,res,next)=>{
+app.use('/',(req,res,next)=>{
     console.log("in a middlewre");
     next();
 });
 
-app.use((req,res,next)=>{
+app.use('/add-product',(req,res,next)=>{
     console.log("in another middlewre");
     res.send("<h1>hello</h1>");
 });
