@@ -1,6 +1,6 @@
 const express=require('express');
 const bodyParser=require('body-parser');
-
+const path=require('path');
 const adminRoutes=require('./routes/admin.js');
 const shopRoutes=require('./routes/shop.js');
 
@@ -12,7 +12,7 @@ app.use('/admin',adminRoutes);
 app.use(shopRoutes);
 
 app.use((req,res,next)=>{
-    res.send('<h1>page not found</h1>');
+    res.sendFile(path.join(__dirname,'views','404.html'));
 })
 
 app.listen(3000);
